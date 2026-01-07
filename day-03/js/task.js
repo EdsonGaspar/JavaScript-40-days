@@ -70,6 +70,20 @@ function CalculaterElectric(unit) {
 // CalculaterElectric(150);
 
 /**
+ * Task six
+ * Leap Years
+ * Verificar se um ano e bissexto
+ * Um ano e bossexto se for divisivel por 400 ou se e divisivel por 4 e nao divisivel por 100
+ */
+
+function CheckLeapYears(ano) {
+  let check = ano % 4 === 0 && ano % 100 !== 0;
+  const result = check ? `Ano Bissexto: ${ano}` : `Ano nao Bissecto ${ano}`;
+  return result;
+}
+// console.log(CheckLeapYears(2029));
+
+/**
  * Task Sevente
  * Calcular o valor maximo dentre 3 variaveis
  */
@@ -94,5 +108,5 @@ function CalculeMaxValue() {
  */
 let count = 5;
 
-let doubleCount = count & 209;
+let doubleCount = count << 1;
 console.log(doubleCount);
