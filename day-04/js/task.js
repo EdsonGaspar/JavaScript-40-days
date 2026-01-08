@@ -197,8 +197,9 @@ function TriangleType(side1, side2, side3) {
   if (side1 === side2 && side2 === side3) {
     console.log(`Trinagulo: Equilateral Triangle`);
   } else if (
-    (side1 !== side2 && side1 === side3) ||
-    (side2 !== side3 && side2 == side1)
+    (side1 === side2 && side1 !== side3) ||
+    (side2 === side3 && side2 !== side1) ||
+    (side3 === side1 && side3 !== side2)
   ) {
     console.log(`Isosceles Triangle`);
   } else {
@@ -206,4 +207,4 @@ function TriangleType(side1, side2, side3) {
   }
 }
 
-TriangleType(3, 2, 2);
+TriangleType(2, 1, 4);
