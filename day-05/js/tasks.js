@@ -39,3 +39,10 @@ function FillUp(n) {
 }
 
 FillUp(4);
+
+const FillUpWater = (p) => {
+  for (c = 1; c <= p; c++) {
+    let acum = 0;
+    // for(){}
+  }
+};
