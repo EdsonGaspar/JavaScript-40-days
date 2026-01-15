@@ -24,27 +24,3 @@ function FindMaxNumber(num1, num2) {
 }
 
 // FindMaxNumber(5, 6);
-
-/**
- * Ciar a função que verifica se uma palavra é um palindrome
- * isPalindrome(str)
- */
-function isPalindrome(str) {
-  let deCount = str.length;
-
-  let innerCount = 1;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === str[deCount - 1]) {
-      innerCount += 1;
-      if (innerCount == str.length) {
-        return true;
-      }
-    }
-  }
-  return false;
-}
-
-console.log(isPalindrome("radar"));
-//1 - a  3 - a
-//2 - n  2 - n
-//3 - a  1 - a
