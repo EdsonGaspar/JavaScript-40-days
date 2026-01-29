@@ -18,3 +18,22 @@ console.log("Terceiro ", p2);
 //StructuredClone
 
 const p3 = structuredClone(person);
+
+const cars = {
+  marca: "Jeep Grandcherock",
+  forca: "4x4",
+};
+
+//Converte de objecto para Array
+let c1 = Object.entries(cars);
+console.log(c1);
+
+//Converte de Array para objrcto
+const animals = new Map([
+  ["food", "bar"],
+  ["baz", 41],
+]);
+
+const a1 = Object.fromEntries(animals);
+
+console.log(a1);
