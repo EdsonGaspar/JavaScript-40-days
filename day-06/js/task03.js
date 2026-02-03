@@ -16,4 +16,4 @@ function isPalindrome(str) {
   return true;
 }
 
-console.log(isPalindrome("casa"));
+console.log(isPalindrome("radar"));
