@@ -38,7 +38,7 @@ console.log(emp); //Continua a ser o objecto inincial
 //Verificar se um determinado objecto esta congelado ou nao "freeze"
 console.log(Object.isFrozen(emp)); //true
 
-//Diferenca entre F reeze e Seal
+//Diferenca entre Freeze e Seal
 
 const depart = {
   nome: "finance",
