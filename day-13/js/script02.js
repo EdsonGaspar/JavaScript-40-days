@@ -21,3 +21,17 @@ const food = {
 };
 
 console.log(food.getDescription());
+
+//Implicit binding, acontece quando objecto.function(), o valor this refere o proprio objecto antes da funcao
+
+const pessoa = {
+  name: "Edson",
+
+  dizerOi() {
+    setTimeout(() => {
+      console.log("Dizer oi", this.name);
+    }, 1000);
+  },
+};
+
+pessoa.dizerOi();
