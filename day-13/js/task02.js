@@ -22,7 +22,18 @@ const obj = {
   },
 };
 
-obj.greet();
+// obj.greet();
 
-// const greetFn = obj.greet();
-// greetFn();
+//Task 04
+
+const usere = {
+  name: "Alex",
+  greet() {
+    const inner = () => {
+      console.log(`Hello, ${this.name}!`);
+    };
+    inner();
+  },
+};
+
+// usere.greet();
