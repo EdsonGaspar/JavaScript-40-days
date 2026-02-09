@@ -28,4 +28,21 @@ function validateAge(age) {
   }
 }
 
-validateAge("tapas");
+// validateAge("tapas");
+const FormData = {
+  userName: "Paulo",
+  userEmail: "paulo@gmail.com",
+};
+function validationForm(formdata) {
+  try {
+    if (!formdata.userName) throw new Error("User name nao inserido");
+    if (!formdata.userEmail.includes("@"))
+      throw new Error("O email deve possuir @");
+
+    console.log(`Name: ${formdata.userName}`);
+  } catch (error) {
+    console.error("Erros encontrados na validacao: ", error.message);
+  }
+}
+
+validationForm(FormData);
