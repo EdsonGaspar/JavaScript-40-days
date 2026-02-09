@@ -42,7 +42,15 @@ function validationForm(formdata) {
     console.log(`Name: ${formdata.userName}`);
   } catch (error) {
     console.error("Erros encontrados na validacao: ", error.message);
+
+    throw error; //rethrow, relanca
+  } finally {
+    console.log("Sempre vai ser executado");
   }
 }
 
-validationForm(FormData);
+try {
+  validationForm(FormData);
+} catch (error) {
+  console.error(`Mostra o erro na autenticao de usuario ${error}`);
+}
