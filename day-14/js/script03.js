@@ -19,3 +19,10 @@ try {
 } catch (error) {
   console.error(`Erro capturado: ${error.name} ${error.message}`);
 }
+
+//Self assignment operator ??=
+let x;
+let y = 10;
+
+console.log((x ??= 20));
+console.log((y ??= 13));
