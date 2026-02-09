@@ -11,4 +11,18 @@ const user = {
   },
 };
 
-user.greet();
+// user.greet(); //Resolvido
+
+//Task 03
+
+const obj = {
+  name: "Tom",
+  greet: function () {
+    console.log(`Hello, ${this.name}!`);
+  },
+};
+
+obj.greet();
+
+// const greetFn = obj.greet();
+// greetFn();
