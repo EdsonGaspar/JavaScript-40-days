@@ -2,9 +2,11 @@
 
 //Custom error
 
-function ValidationError(message) {
-  this.name = "ValidationError";
-  this.message = message;
+class ValidationError {
+  constructor(message) {
+    this.name = "ValidationError";
+    this.message = message;
+  }
 }
 
 function ValidationIsCiteze(age) {
