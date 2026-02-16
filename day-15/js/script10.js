@@ -27,3 +27,25 @@ console.log(arr.flat(Infinity)); //Remove todas as camadas possivel
   });
   console.log(groupedBySal);
 }
+
+//toReversed(), nao muda o array original retorna um novo array invertido
+const items = [1, 3, 6];
+const reversedItems = items.toReversed();
+console.log(items);
+console.log(reversedItems);
+
+//toSorted()
+const manths = ["Marc", "Jan", "Feb", "Dec"];
+const sortedManth = manths.toSorted();
+console.log(sortedManth);
+console.log(manths);
+
+//toSplice()
+const addMonths = manths.toSpliced(3, 0, "Abr", "May");
+console.log(addMonths);
+console.log(manths);
+
+//with(index, value), substitui o valor na posicao index
+const newItems = items.with(1, 9);
+console.log(items); //Orinal array nao muda
+console.log(newItems); //Novo array onde as mudancas sao feitas.
