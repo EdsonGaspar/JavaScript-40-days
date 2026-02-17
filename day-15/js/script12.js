@@ -64,6 +64,7 @@ let costumers = [
 ];
 
 //filter(), cria um novo array com os elementos que satisfacam a logica do assunto.
+//Para o filter usa-se test function
 //sintaxe: array.filter(element, index, array=>{})
 const expendMorMany = costumers.filter((custumer) => {
   return custumer.expense >= 500;
@@ -72,6 +73,7 @@ const expendMorMany = costumers.filter((custumer) => {
 console.log("Lista das maiores compras ", expendMorMany);
 
 // map()
+//Para map usa-se transformation function
 //Sintaxe: array.map((currentValue, index, array)=>{})
 //Retorna o nome completo de um cliente
 const custumersFullName = costumers.map((costumer) => {
@@ -79,7 +81,7 @@ const custumersFullName = costumers.map((costumer) => {
   if (costumer.gender === "M") {
     title = "Welcome Sr.";
   } else if (costumer.gender === "F") {
-    title = "Welcome Ms.";
+    title = costumer.age < 18 ? "Miss." : "Mrs.";
   } else {
     return `You not alowed entries!!!`;
   }
@@ -88,3 +90,94 @@ const custumersFullName = costumers.map((costumer) => {
 });
 
 console.log("Tudo: ", custumersFullName);
+
+//Aplicacao do Filter e Map em conjunto
+
+const people = [
+  { name: "Joaozinho", age: 19, cidade: "MX" },
+  { name: "Paulino", age: 9, cidade: "LA" },
+  { name: "Manuela", age: 22, cidade: "CB" },
+  { name: "Agusta", age: 30, cidade: "ML" },
+  { name: "Makiesse", age: 16, cidade: "CN" },
+  { name: "Jiovana", age: 27, cidade: "LB" },
+];
+
+//Filtar apenas as pessoas maior de idade
+const olderPeople = people
+  .filter((person) => person.age > 17)
+  .map((person) => {
+    return person.name;
+  });
+
+console.log(olderPeople.sort());
+
+//Reduce()
+//Para reduce usa-se reducer function
+//array.reduce((acumulador, valorActual, index, arrayOriginal)=>{}, valorInicial)
+
+//Exemplo: Soma de numeros
+
+const numeros = [2, 1, 4, 1, 5];
+const valorFinal = numeros.reduce((acc, curr) => acc + curr, 0);
+console.log("Exemplo reduce: ", valorFinal);
+
+//Exemplo: Resultado da multiplicacao de todos os elementos do array
+const multValor = numeros.reduce((acc, curr) => acc * curr, 1);
+console.log(
+  "Exemplo reduce, multiplicação de todos os valores do array: ",
+  multValor,
+);
+
+//Contatenar string
+const frases = ["Eu", "amo", "javascript"];
+const fullFrase = frases.reduce((acc, curr) => acc + curr);
+console.log("Frase completa: ", fullFrase);
+//Forma simples
+const fullFrase1 = frases.join(" ");
+console.log(fullFrase1);
+
+//Exemplo simulado
+
+const carrinho = [
+  { name: "Manuel", preco: 1230 },
+  { name: "Gonçalves", preco: 2520 },
+  { name: "Josefa", preco: 3290 },
+  { name: "Fani", preco: 4130 },
+];
+
+//Somar total arecado no dia
+const totalArecadado = carrinho.reduce((acc, curr) => acc + curr.preco, 0);
+console.log("Total: ", totalArecadado);
+
+//Exemplo elegante, Numeros com duplicado
+
+const numerosComDuplicados = [1, 2, 2, 4, 3, 3, 5, 2, 1, 4];
+const numerosSemDuplicados = numerosComDuplicados.reduce((acc, num) => {
+  if (!acc.includes(num)) {
+    acc.push(num);
+  }
+  return acc.sort();
+}, []);
+
+console.log("Contem numeros duplicados,", numerosComDuplicados);
+console.log("Sem numeros duplicados,", numerosSemDuplicados);
+
+//Exemplo elegante verificar calor maximo
+const valorMaximo = numerosSemDuplicados.reduce(
+  (acc, max) => Math.max(acc, max),
+  -Infinity,
+);
+
+console.log(valorMaximo);
+
+//Exemplo elegante, quero saber as medias da idade das pessoas que compraram livro
+let count = 0;
+const idadePeople = costumers.reduce((acc, curr) => {
+  if (curr.purchased.includes("Book")) {
+    acc += curr.age;
+    count++;
+  }
+  return acc;
+}, 0);
+const mediaIdade = Math.floor(idadePeople / count);
+console.log("Media das idades: ", mediaIdade, count);
