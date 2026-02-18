@@ -56,7 +56,7 @@ let costumers = [
     f_name: "Juliana",
     l_name: "Tumba",
     gender: "F",
-    married: true,
+    married: false,
     age: 25,
     expense: 140,
     purchased: ["Shampoo", "Humburger"],
@@ -180,4 +180,36 @@ const idadePeople = costumers.reduce((acc, curr) => {
   return acc;
 }, 0);
 const mediaIdade = Math.floor(idadePeople / count);
-console.log("Media das idades: ", mediaIdade, count);
+console.log(
+  "Media das idades: ",
+  mediaIdade,
+  " Total de pessoas que compraram livros ",
+  count,
+);
+
+//Some(), retorna true ou false. Verifica se tem algum x na lista
+//Exemplo, temos algum cliente menor de 10 anos
+const temClienteJoven = costumers.some((costumer) => costumer.age < 18);
+console.log("Tem algum cliente menor de idade ", temClienteJoven);
+
+//Every(), verificar se todos os elementos da lista passa no teste caso um seja falso ele para.
+//Exemplo: Verificar se todos os clientes da lista sao casados.
+const isMarried = costumers.every((costumer) => costumer.married === true);
+let showIsMarried = isMarried ? "Sim" : "Não";
+console.log("Todos clientes sao casados? ", showIsMarried);
+
+//Retorna o primeiro cliente n\ao casado da lista
+const firstNoMarried = costumers.find((costumer) => costumer.married === false);
+console.log(firstNoMarried);
+
+//Retornar o ultimo usuario activo na lista
+const users = [
+  { name: "Paulo", active: false },
+  { name: "Sofia", active: true },
+  { name: "Kilunda", active: false },
+  { name: "Manuela", active: true },
+  { name: "Josefa", active: false },
+];
+
+const lastActive = users.findLast((last) => last.active);
+console.log(lastActive);
