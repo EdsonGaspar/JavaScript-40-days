@@ -211,5 +211,28 @@ const users = [
   { name: "Josefa", active: false },
 ];
 
-const lastActive = users.findLast((last) => last.active);
-console.log(lastActive);
+const lastActive = users.findLastIndex((last) => last.active);
+console.log("Ultimo usuario activo", lastActive);
+
+//Obtenha o total gasto por clientes casados.
+const totalGastoCasados = costumers.reduce((acc, curr) => {
+  if (curr.married) {
+    acc += curr.expense;
+  }
+  return acc;
+}, 0);
+
+console.log(totalGastoCasados);
+
+const totalGastoCasados2 = costumers
+  .filter((costumer) => costumer.married)
+  .reduce((acc, curr) => acc + curr.expense, 0);
+console.log(totalGastoCasados2);
+
+//Mostra uma lista dos gastos dos clientes casados;
+const marriedCostumers = costumers.filter((costumer) => costumer.married);
+const gastosCasados = marriedCostumers.map((costumer) => {
+  return costumer.expense;
+});
+
+console.log(gastosCasados);
