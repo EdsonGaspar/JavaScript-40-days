@@ -236,3 +236,25 @@ const gastosCasados = marriedCostumers.map((costumer) => {
 });
 
 console.log(gastosCasados);
+
+const numbers = [1, 1, 2, 3, 4, 5, 6];
+let sum = 0;
+numbers.forEach((elem) => (sum += elem));
+console.log(sum);
+
+//ENTRIES(), intera o array retornando o indice e o valor do elemento
+const names = ["Paulo", "Jose", "Maraulo"];
+const entriesNames = names.entries();
+
+console.log("Metedo ENTRIES");
+
+for (let [index, name] of entriesNames) {
+  console.log(index, name);
+}
+console.log("Metodo VALUES");
+
+//VALUES(), funciona parecido com entries, mais com uma pequena diferença ele apenas retornaa o valor do elemento
+const valuesNames = names.values();
+for (const name of valuesNames) {
+  console.log(name);
+}
