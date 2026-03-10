@@ -15,3 +15,10 @@ elementoSpan.innerText =
 const selectP = document.querySelector("p");
 
 document.body.insertBefore(elementoSpan, selectP);
+
+const selectP2 = (selectP.innerHTML = `A informacao foi mudada aqui`);
+
+const selectH2 = document.querySelector("h2");
+
+console.log(selectH2.nextElementSibling);
+console.log(selectP2);
