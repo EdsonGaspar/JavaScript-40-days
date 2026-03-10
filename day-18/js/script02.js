@@ -1,8 +1,14 @@
-//Inseriri depois, nao existe uma funcao ou metodo para isso mais podemos pegar o metodo do irmao proximo para tal
-//Quero inserir o h2 depois do p
+//**
+// Estudando innerHTML
+// Ele e usado para formatar texto, actualizar texto e ler texto */
 
-//Fazendo, comencando por criar um elemento
-const span = document.createElement("span");
-span.innerText = "Testando se sera inserido depois do 40 days";
-
-let Elemp = document.querySelector("p");
+{
+  //Exemplo onde vai ler um conteudo
+  const readP = document.querySelector("p");
+  console.log(readP.innerHTML);
+}
+{
+  //Exemplo Actualizando e modificando
+  let changeH2 = document.querySelector("h2");
+  changeH2.innerHTML = "Ola como <u>voce</u> esta?";
+}
